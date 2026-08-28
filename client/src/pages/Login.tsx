@@ -99,9 +99,8 @@ export default function Login({ state }: { state: string }) {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 mt-5 rounded-lg bg-primary text-sm text-primary-foreground flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50"
+                            className="w-full py-3 mt-5 rounded-lg cta-gradient text-sm flex items-center justify-center gap-2 disabled:opacity-50"
                             id="login-submit-btn"
-                            style={{ color: "var(--background)" }}
                         >
                             {loading ? <Loader2 size={18} className="animate-spin" /> : isLoginState ? "Sign In" : "Create Account"}
                         </button>
@@ -110,7 +109,7 @@ export default function Login({ state }: { state: string }) {
 
                 <p className="text-center text-sm text-muted-foreground mt-6">
                     {isLoginState ? "Don't have an account?" : "Already have an account?"}
-                    <button onClick={() => setIsLoginState((prev) => !prev)} className="text-primary hover:underline font-medium pl-1">
+                    <button onClick={() => setIsLoginState((prev) => !prev)} className="text-accent hover:underline font-medium pl-1">
                         {isLoginState ? "Sign up" : "Sign in"}
                     </button>
                 </p>

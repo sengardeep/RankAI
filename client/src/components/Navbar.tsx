@@ -72,7 +72,7 @@ export default function Navbar() {
                                 <Link to="/login" className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                                     Log In
                                 </Link>
-                                <Link to="/register" className="px-5 py-2 rounded-full bg-primary text-sm transition-opacity" style={{ color: "var(--background)" }}>
+                                <Link to="/register" className="px-5 py-2 rounded-full cta-gradient text-sm">
                                     Get Started
                                 </Link>
                             </>
@@ -135,7 +135,7 @@ export default function Navbar() {
                                 <Link to="/login" onClick={() => setMobileOpen(false)} className="block px-3 py-3 text-sm font-medium text-foreground text-center rounded-lg hover:bg-muted">
                                     Log In
                                 </Link>
-                                <Link to="/register" onClick={() => setMobileOpen(false)} className="block px-3 py-3 text-sm font-semibold text-center rounded-lg bg-primary" style={{ color: "var(--background)" }}>
+                                <Link to="/register" onClick={() => setMobileOpen(false)} className="block px-3 py-3 text-sm font-semibold text-center rounded-lg cta-gradient">
                                     Get Started
                                 </Link>
                             </div>

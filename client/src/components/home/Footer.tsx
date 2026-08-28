@@ -10,21 +10,21 @@ export default function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-12">
                     <div className="col-span-2">
                         <div className="flex items-center gap-2 mb-4">
-                            <ChartNoAxesColumnIcon className="text-primary" />
+                            <ChartNoAxesColumnIcon className="text-accent" />
                             <span className="text-xl">Rank AI</span>
                         </div>
                         <p className="text-sm text-muted-foreground mb-6 w-5/6">Optimize your website for search engines with AI-powered insights and real-time tracking.</p>
                         <div className="flex items-center gap-4">
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                                 <SiX size={20} />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                                 <SiInstagram size={20} />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                                 <SiFacebook size={20} />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
                                 <SiTwitch size={20} />
                             </a>
                         </div>
@@ -36,7 +36,7 @@ export default function Footer() {
                             <ul className="space-y-1">
                                 {section.links.map((link: any) => (
                                     <li key={link}>
-                                        <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                        <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                                             {link}
                                         </a>
                                     </li>
