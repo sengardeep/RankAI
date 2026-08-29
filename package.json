@@ -1,8 +1,0 @@
-{
-  "name": "rankai-main",
-  "private": true,
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "node dev.js"
-  }
-}
