@@ -8,7 +8,7 @@ import analysisRouter from "./routes/analysisRoutes.js";
 import { startRankTrackingCron } from "./cron/rankTrackingCron.js";
 const app=express();
 
-connectDb();
+// Initialize middleware before connecting to DB
 app.use(cors());
 app.use(express.json());
 
@@ -20,8 +20,23 @@ app.get("/",(req,res)=>{
 app.use("/api/auth",authRouter);
 app.use("/api/rank",rankRouter);
 app.use("/api/analysis",analysisRouter)
-//cron job
-startRankTrackingCron();
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-})
+
+// Start server and connect to database
+const startServer = async () => {
+    try {
+        // Wait for database connection before starting server
+        await connectDb();
+        
+        // Start cron job after successful DB connection
+        startRankTrackingCron();
+        
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error("Failed to start server:", error.message);
+        process.exit(1);
+    }
+};
+
+startServer();
