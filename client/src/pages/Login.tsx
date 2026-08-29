@@ -38,7 +38,7 @@ export default function Login({ state }: { state: string }) {
                 <div className="text-center mb-8">
                     <Link to="/" className="flex items-center justify-center gap-2 group mb-10">
                         <ChartNoAxesColumnIcon />
-                        <span className="text-xl tracking-tight text-foreground">Rank Pilot</span>
+                        <span className="text-xl tracking-tight text-foreground">Rank AI</span>
                     </Link>
                 </div>
 
@@ -47,7 +47,7 @@ export default function Login({ state }: { state: string }) {
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="text-center py-5">
                             <h1 className="text-2xl text-foreground">Welcome back</h1>
-                            <p className="text-muted-foreground text-sm mt-1">{isLoginState ? "Sign in to your" : "Create an"} Rank Pilot account</p>
+                            <p className="text-muted-foreground text-sm mt-1">{isLoginState ? "Sign in to your" : "Create an"} Rank AI account</p>
                         </div>
 
                         {!isLoginState && (
@@ -99,9 +99,8 @@ export default function Login({ state }: { state: string }) {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 mt-5 rounded-lg bg-primary text-sm text-primary-foreground flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50"
+                            className="w-full py-3 mt-5 rounded-lg cta-gradient text-sm flex items-center justify-center gap-2 disabled:opacity-50"
                             id="login-submit-btn"
-                            style={{ color: "var(--background)" }}
                         >
                             {loading ? <Loader2 size={18} className="animate-spin" /> : isLoginState ? "Sign In" : "Create Account"}
                         </button>
@@ -110,7 +109,7 @@ export default function Login({ state }: { state: string }) {
 
                 <p className="text-center text-sm text-muted-foreground mt-6">
                     {isLoginState ? "Don't have an account?" : "Already have an account?"}
-                    <button onClick={() => setIsLoginState((prev) => !prev)} className="text-primary hover:underline font-medium pl-1">
+                    <button onClick={() => setIsLoginState((prev) => !prev)} className="text-accent hover:underline font-medium pl-1">
                         {isLoginState ? "Sign up" : "Sign in"}
                     </button>
                 </p>

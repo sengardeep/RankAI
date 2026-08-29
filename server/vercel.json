@@ -1,19 +1,27 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "api/[...path].js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/api/[...path].js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/[...path].js"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "config/**",
+          "controllers/**",
+          "cron/**",
+          "middleware/**",
+          "models/**",
+          "routes/**",
+          "services/**",
+          ".env.local"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.js"
+    }
+  ]
 }

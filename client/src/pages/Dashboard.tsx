@@ -73,12 +73,12 @@ export default function Dashboard() {
 
                 {/* Quick Analyze */}
                 <form onSubmit={handleAnalyze} className="mb-10" style={{ animationDelay: "100ms" }}>
-                    <div className="border border-primary/20 rounded-full p-2 flex items-center gap-2 max-w-2xl">
+                    <div className="rounded-full p-2 flex items-center gap-2 max-w-2xl input-glow">
                         <div className="flex items-center gap-3 flex-1 px-3">
                             <SearchIcon size={20} className="text-muted-foreground shrink-0" />
                             <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="Enter a URL to analyze..." className="w-full bg-transparent text-foreground placeholder-muted-foreground outline-none text-sm py-3" id="dashboard-url-input" />
                         </div>
-                        <button type="submit" className="bg-primary px-5 py-3 rounded-full text-primary-foreground text-sm hover:opacity-90 transition-opacity shrink-0 flex items-center gap-2" style={{ color: "var(--background)" }} id="dashboard-analyze-btn">
+                        <button type="submit" className="cta-gradient px-5 py-3 rounded-full text-sm shrink-0 flex items-center gap-2" id="dashboard-analyze-btn">
                             Analyze
                             <ArrowRightIcon size={16} />
                         </button>
@@ -88,7 +88,7 @@ export default function Dashboard() {
                 {/* Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
                     <div className="glass rounded-2xl p-5 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                        <div className="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent">
                             <GlobeIcon size={22} />
                         </div>
                         <div>
@@ -97,7 +97,7 @@ export default function Dashboard() {
                         </div>
                     </div>
                     <div className="glass rounded-2xl p-5 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                        <div className="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent">
                             <TrendingUpIcon size={22} />
                         </div>
                         <div>
@@ -121,7 +121,7 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between mb-5">
                         <h2 className="text-lg font-semibold text-foreground">Recent Analyses</h2>
                         {analyses.length > 0 && (
-                            <Link to="/history" className="text-sm text-primary hover:underline flex items-center gap-1">
+                            <Link to="/history" className="text-sm text-accent hover:underline flex items-center gap-1">
                                 View All <ArrowRightIcon size={14} />
                             </Link>
                         )}
@@ -129,7 +129,7 @@ export default function Dashboard() {
 
                     {loading ? (
                         <div className="flex items-center justify-center py-30">
-                            <div className="size-7 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                            <div className="size-7 border-2 border-accent border-t-transparent rounded-full animate-spin" />
                         </div>
                     ) : analyses.length === 0 ? (
                         <div className="glass rounded-2xl p-12 text-center">
